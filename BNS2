@@ -1,1 +1,54 @@
-biomass
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("ONLINE STORE ORDER");
+
+        Console.Write("Product Name: ");
+        string productName = Console.ReadLine();
+
+        Console.Write("Quantity: ");
+        int quantity = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Price per Item: ");
+        double pricePerItem = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Discount Percentage: ");
+        double discountPercentage = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Delivery Distance (km): ");
+        double deliveryDistance = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("First Letter of Payment Method: ");
+        char paymentLetter = Convert.ToChar(Console.ReadLine());
+
+        Console.Write("Is Express Delivery (true/false): ");
+        bool isExpress = Convert.ToBoolean(Console.ReadLine());
+
+        double totalPrice = quantity * pricePerItem;
+        double discountAmount = totalPrice * discountPercentage / 100;
+        double finalPrice = totalPrice - discountAmount;
+
+        Console.WriteLine("\n----- ORDER DETAILS -----");
+        Console.WriteLine("Product: " + productName);
+        Console.WriteLine("Quantity: " + quantity);
+        Console.WriteLine("Price per Item: " + pricePerItem);
+        Console.WriteLine("Discount Percentage: " + discountPercentage);
+        Console.WriteLine("Delivery Distance: " + deliveryDistance);
+        Console.WriteLine("Payment Letter: " + paymentLetter);
+        Console.WriteLine("Express Delivery: " + isExpress);
+
+        Console.WriteLine("\nTotal Price: " + totalPrice);
+        Console.WriteLine("Discount Amount: " + discountAmount);
+        Console.WriteLine("Final Price: " + finalPrice);
+
+        Console.WriteLine("\nData Types:");
+        Console.WriteLine(productName.GetType());
+        Console.WriteLine(quantity.GetType());
+        Console.WriteLine(isExpress.GetType());
+
+        Console.ReadLine();
+    }
+}
